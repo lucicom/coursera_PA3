@@ -52,5 +52,5 @@ DT <-data.table(ucihar)
 finalDT <- DT[, lapply(.SD, mean, na.rm=TRUE), by=c("subject", "activity")]
 
 # order the final set and save it to file
-write.csv(finalDT[order(finalDT$subject, finalDT$activity),], file = "UCI-HAR.summary.csv")
+write.csv(finalDT[order(finalDT$subject, finalDT$activity),], file = "UCI-HAR.summary.txt")
 

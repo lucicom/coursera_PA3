@@ -10,6 +10,7 @@
 
 # data
 *.csv
+UCI-HAR.summary.txt
 
 # data directory
 UCI HAR Dataset
