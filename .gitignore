@@ -8,6 +8,9 @@
 .Rdata
 .Rproj.user
 
+# data
+*.csv
+
 # data directory
 UCI HAR Dataset
 

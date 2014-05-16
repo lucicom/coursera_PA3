@@ -1,4 +1,17 @@
 
+#
+# This script does the following: 
+#
+# 1. Merges the 3 datasets (files) - subject, activity and main data - for the training 
+#    or the test sets to create one data set 
+# 2. Extracts only the measurements on the mean and standard deviation for each measurement 
+#
+# param:    activity_labels - the activity labels
+# param:    features - the list of measures (used as column names)
+# param:    set - the name of the set (either "test" or "train")
+#
+# return:   the merged dataframe (by column) from the 3 files
+#
 
 merge_dataset <- function(activity_labels, features, set) {
     
@@ -18,7 +31,7 @@ merge_dataset <- function(activity_labels, features, set) {
     names(X) <- features
     
     # select only the columns containing mean values
-    X <- X[, grep(pattern = "mean", features ,ignore.case = TRUE)]
+    X <- X[, grep(pattern = "mean|std", features ,ignore.case = TRUE)]
     
     # merge all 3 sets into one
     cbind(subject = subject, activity = y$activity, X)
