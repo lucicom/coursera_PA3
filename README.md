@@ -18,8 +18,7 @@ Original data was collected from the accelerometers from the Samsung Galaxy S sm
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 
-License and Disclaimer for the original dataset:
-================================================
+### License and Disclaimer for the original dataset:
 
 Use of the original dataset request referencing the following publication [1] 
 
@@ -57,7 +56,7 @@ See features_info.txt in the downloaded zip file. The complete list of variables
 
 
 
-** FOR THE PURPOSE OF THIS PROJECT WE CONSIDER RAW DATA THE DATA THAT WAS ALREADY PROCESSED AS DESCRIBED ABOVE AND IT IS PROVIDED IN THE MAIN DIRECTORY OF EACH SET: **
+**FOR THE PURPOSE OF THIS PROJECT WE CONSIDER RAW DATA THE DATA THAT WAS ALREADY PROCESSED AS DESCRIBED ABOVE AND IT IS PROVIDED IN THE MAIN DIRECTORY OF EACH SET:**
 
 - 'activity_labels.txt': Links the class labels with their activity name.
 
@@ -71,40 +70,31 @@ See features_info.txt in the downloaded zip file. The complete list of variables
 
 
 
-
 ### download_data.R
 
 The script will download data from the URL above and unpack it in the data directory, creating this directory if not already existing. If the data is already downloaded, the script will overwrite all files (without any warning). 
 
 It will also create a download_data.tstamp file (in data dir) that will record the date and time of the last download.
   
+If you download the data manually, you will have to extract it including the directories ... the processing scripts expect a directory "UCI HAR Dataset" in the current directory that will contain the metadata (activity_labels.txt and features.txt) and 2 subdirectories (test and train that will contain the "raw" data - X_train.txt, subject_train.txt and y_train.txt). Currently there are no checks if those directories/files exists!
 
 
 
 ## run_analysis.R
 
+This is the main script that reads all the data and creates a final, tidy data set with the average of each variable for each activity and each subject. 
+For more details, see the [CodeBook.md](https://github.com/lucicom/coursera_PA3/blob/master/CodeBook.md)
 
 
-This script does the following: 
-1.	Merges the training and the test sets to create one data set.
-2.	Extracts only the measurements on the mean and standard deviation for each measurement. 
-3.	Uses descriptive activity names to name the activities in the data set
-4.	Appropriately labels the data set with descriptive activity names. 
-5.	Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
-For more details, see 
+## merge_dataset.R
+
+This file contains an utility function (called by run_analisis.R) that reads all the individual files belonging to a set (train or test) and merge them together.
+For more details, see the [CodeBook.md](https://github.com/lucicom/coursera_PA3/blob/master/CodeBook.md)
+
 
 
 ## CodeBook.md
 
 This file describes all the variables from the tidy dataset, the data, and any transformations or work performed to clean up the data.
-
- 
-================================================================================
-
-You will be required to submit: 
-1) a tidy data set as described below, 
-2) a link to a Github repository with your script for performing the analysis, 3) a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md. 
-
-You should also include a README.md in the repo with your scripts. This repo explains how all of the scripts work and how they are connected. 
 
