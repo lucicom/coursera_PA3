@@ -70,11 +70,11 @@ See features_info.txt in the downloaded zip file. The complete list of variables
 
 
 
-### download_data.R
+## download_data.R
 
 The script will download data from the URL above and unpack it in the data directory, creating this directory if not already existing. If the data is already downloaded, the script will overwrite all files (without any warning). 
 
-It will also create a download_data.tstamp file (in data dir) that will record the date and time of the last download.
+It will also create a download_data.tstamp file (in the current directory) that will record the date and time of the last download.
   
 If you download the data manually, you will have to extract it including the directories ... the processing scripts expect a directory "UCI HAR Dataset" in the current directory that will contain the metadata (activity_labels.txt and features.txt) and 2 subdirectories (test and train that will contain the "raw" data - X_train.txt, subject_train.txt and y_train.txt). Currently there are no checks if those directories/files exists!
 

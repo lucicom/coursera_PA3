@@ -46,7 +46,7 @@ Each individual set (either test or train) is first processed in merge_dataset (
 
 ## Variable Names
 
-For convenience the names of the measures were not renamed, but kept the same like in the original data source.
+For convenience the names of the measures were not renamed, but kept the same like in the original data source (except for removing the brackets).
 
 Basically they are built on the following pattern:
 
@@ -68,7 +68,7 @@ where:
 
 e.g. tBodyAccJerk-mean-X is the mean (mean) of the time (t) body (body) acceleration (Acc) signals measured by the accelerometer on the X-axis (X), derived in time to obtain Jerk (Jerk) signals and averaged.
 
-See README.md, section Data Collection / The Experiment.
+See [README.md](https://github.com/lucicom/coursera_PA3/blob/master/README.md), section Data Collection / The Experiment.
 
 
 ## Variable Description
